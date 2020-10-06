@@ -7,27 +7,26 @@
 </head>
 <body>
     <form method = 'post' th:action="@{/user}">
-        <label>
+        <p><label>
             Username:
-            <input type = 'text' name = 'username' th:value="${username}">
-        </label>
-
-        <label>
+            <input type = 'text' th:field="${user.username}">
+        </label></p>
+        <p class="error" th:errors="${user.username}"></p>
+        <p><label>
             Email:
-            <input type = 'email' name = 'email' th:value="${email}">
-        </label>
-
-        <label>
+            <input th:field="${user.email}">
+        </label></p>
+        <p class="error" th:errors="${user.email}"></p>
+        <p><label>
             Password:
-            <input type = 'password' name = 'password'>
-        </label>
-
-        <label>
+            <input type = 'password' th:field="${user.password}">
+        </label></p>
+        <p class="error" th:errors="${user.password}"></p>
+        <p><label>
             Verify Password:
             <input type = 'password' name = 'verify'>
-        </label>
-
-        <p th:text="${error}"></p>
+        </label></p>
+        <p class="error" th:text="${error}"></p>
 
         <input type = 'submit' value = 'Sign Up'>
     </form>
